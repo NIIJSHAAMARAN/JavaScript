@@ -1,0 +1,38 @@
+<!-- You are helping design a simple product listing feature for an online grocery store. You have an array of product names and an array of their prices. Your tasks are:
+
+Merge the product names and prices into one array in the format: "Product: Apple - Price: 50"
+
+Display all product entries using a loop.
+
+Filter and show only the products with prices greater than 50.
+
+Add a new product "Watermelon" with price 80 to the list, and then display the updated product list.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script type="text/javascript">
+        var i,text,newArr=[];
+       var products=["Apple","Orange","Grapes"];
+       var price=[50,40,30];
+       var lenArr=products.length;
+       for(i=0;i<lenArr;i++)
+       {
+           newArr.push("Product: " + products[i] + " - Price: " + price[i]);
+       }
+       text="<ul>" ;
+        for(i=0;i<lenArr;i++)
+        {
+            text+="<li>"+newArr[i]+"</li>";
+        }
+        text+="</ul>";
+        document.getElementById("display").innerHTML=text;
+    </script>
+</body>
+</html>
