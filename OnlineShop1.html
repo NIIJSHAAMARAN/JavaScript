@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <p id="total_earn1"></p>
+    <p id="total_earn2"></p>
+    <script type="text/javascript">
+      let tshirt_c=5,tshirt_p=400,cap_c=3,cap_p=150
+      let total=(tshirt_c*tshirt_p)+(cap_c*cap_p)
+      document.getElementById("total_earn1").innerHTML=total
+       tshirt_p=450
+       total=(tshirt_c*tshirt_p)+(cap_c*cap_p)
+       document.getElementById("total_earn2").innerHTML=total
+
+    </script>
+</body>
+</html>
