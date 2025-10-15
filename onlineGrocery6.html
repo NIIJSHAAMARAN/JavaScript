@@ -17,10 +17,12 @@ Add a new product "Watermelon" with price 80 to the list, and then display the u
 </head>
 <body>
     <p id="display"></p>
+    <p id="displaynew"></p>
+    <p id="displayadded"></p>
     <script type="text/javascript">
-        var i,text,newArr=[];
+        var i,text,newArr=[],textAlt,textadded;
        var products=["Apple","Orange","Grapes"];
-       var price=[50,40,30];
+       var price=[50,80,30];
        var lenArr=products.length;
        for(i=0;i<lenArr;i++)
        {
@@ -33,6 +35,29 @@ Add a new product "Watermelon" with price 80 to the list, and then display the u
         }
         text+="</ul>";
         document.getElementById("display").innerHTML=text;
+        textAlt="<ul>" ;
+        for(var i=0;i<price.length;i++)
+        {
+            if(price[i]>50)
+            {  
+                textAlt+="<li>"+newArr[i]+"</li>";
+
+            }
+        }
+        textAlt+="</ul>";
+
+        document.getElementById("displaynew").innerHTML=textAlt;
+        products.push("Watermelon");
+        price.push(80);
+        
+        textadded="<ul>" ;
+        for(var i=0;i<products.length;i++)
+        {
+            textadded+="<li>Product:"+products[i]+"- price:"+price[i]+"</li>";
+        }
+        textadded+="</ul>";
+        document.getElementById("displayadded").innerHTML=textadded;
+    
     </script>
 </body>
 </html>
