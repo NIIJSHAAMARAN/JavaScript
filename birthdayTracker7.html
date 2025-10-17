@@ -1,0 +1,59 @@
+<!-- You are building a simple birthday tracker for your friends. You need to:
+Create an object named friend with properties: name and birthDate (in the format YYYY-MM-DD).
+
+Write a function getBirthdayDetails that:
+    Accepts the friend object as input,
+    converts the birthDate string into a date,
+    Extracts and prints the year, month name, and day of the month,
+    Calculates how many years old the friend is as of today.
+Display the result in the format:
+ "John was born on 5 July, 1999 and is 25 years old."
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h5>DOB</h5>
+    <p id="yyyy"></p>
+    <p id="mm"></p>
+    <p id="dd"></p>
+    <h5>DOB Format</h5>
+    <p id="result"></p>
+ <script type="text/javascript">
+    var dat;
+    friend={
+        name:"Deepu",
+        birthDate:"1999-04-14",
+    };
+    function getBirthdayDetails(frnd)
+    {
+         dat=new Date(frnd.birthDate);
+    var yr=dat.getFullYear();
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var mnth=months[dat.getMonth()];
+    var day=dat.getDate();
+    document.getElementById("yyyy").innerHTML=yr;
+    document.getElementById("mm").innerHTML=mnth;
+    document.getElementById("dd").innerHTML=day;
+    var today = new Date();
+    var age = today.getFullYear() - yr;
+     if (
+                today.getMonth() < dat.getMonth() ||
+                (today.getMonth() === dat.getMonth() && today.getDate() < dat.getDate())
+            ) {
+                age--;
+            }
+
+            
+            var message = `${frnd.name} was born on ${day} ${mnth}, ${yr} and is ${age} years old.`;
+            document.getElementById("result").innerHTML = message;
+        }
+
+    getBirthdayDetails(friend);
+ </script> 
+</body>
+</html>
